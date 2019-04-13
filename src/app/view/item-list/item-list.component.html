@@ -1,0 +1,41 @@
+<div class="row p-2">
+  <div class="offset-md-4 col-md-4 col-12">
+    <app-item-submit-input (submitButtonClick)="addItem($event)"></app-item-submit-input>
+  </div>
+</div>
+
+<div class="row pl-2">
+  <div class="offset-md-4 col-md-4 col-12">
+    <h2>Unpacked Items ({{ displayUnpackedItems.length }})</h2>
+  </div>
+</div>
+
+<div class="row p-2">
+  <div class="offset-md-4 col-md-4 col-12">
+    <app-text-input (keyup)="onUnpackedItemKeyUp($event)"></app-text-input>
+  </div>
+  <div *ngFor="let itemName of displayUnpackedItems" class="offset-md-4 col-md-4 col-12">
+    <app-checkbox-input [id]="itemName" checked="" (change)="packItem($event)" (removeButtonClick)="removeItem($event)"></app-checkbox-input>
+  </div>
+</div>
+
+<div class="row pl-2">
+  <div class="offset-md-4 col-md-4 col-12">
+    <h2>Packed Items ({{ displayPackedItems.length }})</h2>
+  </div>
+</div>
+
+<div class="row p-2">
+  <div class="offset-md-4 col-md-4 col-12">
+    <app-text-input (keyup)="onPackedItemKeyUp($event)"></app-text-input>
+  </div>
+  <div *ngFor="let itemName of displayPackedItems"  class="offset-md-4 col-md-4 col-12">
+    <app-checkbox-input [id]="itemName" checked="checked" (change)="unpackItem($event)" (removeButtonClick)="removeItem($event)"></app-checkbox-input>
+  </div>
+</div>
+
+<div class="row p-2">
+  <div class="offset-md-4 col-md-4 col-12">
+    <app-submit-button value="Mark All As Unpacked" (click)="markAllAsUnpacked($event)"></app-submit-button>
+  </div>
+</div>

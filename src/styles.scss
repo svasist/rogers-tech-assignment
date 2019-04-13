@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body, input {
+    font: menu;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.5em;
+    border: 1px solid #f32e5b;
+    background-color: #fbbfcd;
+}
+
+button, .button, input[type="submit"] {
+    background-color: #f32e5b;
+    border: 1px solid #e10d3d;
+    color: white;
+    padding: 0.5em;
+    transition: all 0.2s;
+}

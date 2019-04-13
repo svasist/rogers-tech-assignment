@@ -1,0 +1,17 @@
+label {
+    padding-left: 5px;
+}
+
+.item-remove {
+    background-color: white;
+    color: #f65e81;
+    border: none;
+    margin-left: 1em;
+    outline: none;
+    padding: 0;
+    cursor: default;
+}
+
+.item-remove:hover{
+    text-decoration:underline;
+}
