@@ -8,6 +8,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class ItemSubmitInputComponent implements OnInit {
   public itemName: String;
   @Output() submitButtonClick: EventEmitter<any>  = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit() {

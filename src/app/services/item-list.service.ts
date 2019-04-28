@@ -39,28 +39,30 @@ export class ItemListService {
   }
 
   markAllAsUnpacked() {
-    this.itemList = this.itemList.map(item => {
-      return {"name": item.name, "isPacked": false}
+    this.itemList = this.itemList.map((item: Item) => {
+      item.isPacked = false;
+
+      return item;
     });
   }
 
   markItemAsPacked(itemName: string) {
-    this.itemList = this.itemList.map(item => {
+    this.itemList = this.itemList.map((item: Item) => {
       if(item.name === itemName) {
-        return {"name": item.name, "isPacked": true};
-      } else {
-        return {"name": item.name, "isPacked": item.isPacked};
+        item.isPacked = true;
       }
+
+      return item;
     });
   }
 
   markItemAsUnpacked(itemName: string) {
-    this.itemList = this.itemList.map(item => {
+    this.itemList = this.itemList.map((item: Item) => {
       if(item.name === itemName) {
-        return {"name": item.name, "isPacked": false};
-      } else {
-        return {"name": item.name, "isPacked": item.isPacked};
+        item.isPacked = false;
       }
+
+      return item;
     });
   }
 
@@ -69,9 +71,10 @@ export class ItemListService {
   }
 
   addItem(itemName: string) {
-    this.itemList.unshift({
-      "name": itemName,
-      "isPacked": false
-    });
+    const newItem = <Item>{};
+    newItem.isPacked = false;
+    newItem.name = itemName;
+    
+    this.itemList.unshift(newItem);
   }
 }
